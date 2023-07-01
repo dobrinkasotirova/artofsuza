@@ -1,0 +1,489 @@
+{% extends 'nav.html' %}
+{% block content %}
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Frank Ruhl Libre' rel='stylesheet'>
+</head>
+<style>
+    .headerContainer{
+        width: 65%;
+        height: 700px;
+        display: flex;
+        margin: auto;
+    }
+    .secondContainer{
+        width: 60%;
+        height: 1300px;
+        margin: auto;
+        text-align: center;
+        padding-top: 30px;
+        font-family: 'Frank Ruhl Libre';
+    }
+    .textContainer{
+        width: 60%;
+        padding-top: 70px;
+        padding-left: 70px;
+        
+    }
+    .textContainer div{
+        width: 200px;
+        padding-top: 6px;
+    }
+    .textContainer div a{
+        text-decoration: none;
+        text-transform: uppercase; 
+        font-size: 25px;
+        text-align: center;
+        color: white;
+        padding-top: 5px;
+    } 
+    .pictureContainer{
+        text-align: right;
+        background: url('../data/357641582_3455289418063759_3343450379816320587_n.jpg');
+        background-size: cover;
+        width: 500px;
+        height:665px;
+        border-radius: 0px 0px 0px 80px;
+    }
+    #text{
+        width:60%;
+    }
+    #buttonDiv{
+        text-align: center;
+    }
+    .card-group{
+        width: 70%;
+        margin: auto;
+    }
+    .bestPainting{
+        padding-top: 55px;
+        width: 70%;
+        display: flex;
+        margin: auto;
+    }
+    .bestImage{
+        background: url('../data/26.jpg');
+        background-size: cover;
+        width: 75%;
+        height:575px;
+        border-radius: 0px 0px 80px 0px;
+    
+    }
+    .bestText{
+        width: 600px;
+    }
+    .bestText h1, .bestText p{
+        width: 300px;
+        text-align: left;
+        padding-top: 50px;
+        padding-left: 30px;
+    }
+    .bestText img{
+        width: 580px;
+        position: absolute;
+        margin-left: -325px;
+    }
+
+    .col-6{
+        width: 28%!important;  
+    }
+
+    :root{
+        --cr1:#F36E45;
+        --cr2:#fff;
+        --cr3:#000000da;
+        --cr4:#000000a1;
+        --cr5:#BEB4B1;
+        --fs1:34px;
+        --fs2:24px;
+        --fs3:20px;
+        --fs4:16px;
+        --fs5:14px;
+      }
+      body {
+        background: #e5e5e5;
+      }
+      /* the same attribute */
+      .cr1{
+        color: var(--cr1);
+      }
+      .c2{
+        color:  var(--cr2);
+      }
+      .cr3{
+        color:  var(--cr3);
+      }
+      .cr4{
+        color:  var(--cr4);
+      }
+      .cr5{
+        color:  var(--cr5);
+      }
+      .fs1{
+        font-size: 34px;
+      }
+      .fs2{
+        font-size: 24px;
+      }
+      .fs3{
+        font-size: 20px;
+      }
+      .fs4{
+        font-size: 16px;
+      }
+      .fs5{
+        font-size: 14px;
+      }
+      /* end the same attribute */
+      @font-face {
+        src: url(ProductSansRegular_0.ttf);
+        font-family: product;
+      }
+      *{padding: 0px;margin: 0px;box-sizing: border-box;font-family: segoe ui}
+      body,html{width:100%;height:100%;}
+      [class*="container"]{
+        max-width: 1333px !important;
+      }
+      
+      .bg-product{
+        /* SET Height cho nó rồi bảo sao ko lỗi? */
+        /*height: 446px;*/
+       
+        /* overflow: hidden; */
+      }
+      #sliderproduct{
+        width: 100%;
+      }
+      #sliderproduct .carousel-inner {
+        overflow: visible;
+      }
+      
+      #sliderproduct .col-sm-6.image {
+        background: #fff;
+        box-shadow: 0px 4px 8px 0px #959595;
+        position: relative;
+        /* Thêm cái của nợ này vào bảo sao nó ko tràn bờ đê */
+        /*top: -44px;
+        padding: 100px;
+        padding-top: 40px;*/
+      }
+      .item {
+        padding: 20px 20px 40px 20px;
+      }
+      
+      .col-sm-6.image .item img.img-fluid {
+        /* Ai mướn thêm cái vào làm phá bố cục css của người ta.. mún trang web đẹp thì phải lựa cái ảnh đẹp đẹp vào rồi set cái độ rộng cho nó vừa là được rồi */
+        /*min-width: 100%;*/
+        width: 367px;
+      }
+      .col-sm-6.image h1 {
+        margin-bottom: 20px;
+      }
+      
+      
+      #sliderproduct .top a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        padding: 14px 22px;
+        background: #800020FF!important;
+        box-sizing: border-box !important;
+        text-align: center;
+        margin: 0px 2px;
+        display: block;
+        color: #fff;
+        width: 96px;
+      }
+      
+      #sliderproduct .col-sm-4.mr-auto {
+        margin-top: 22px;
+      }
+      
+      *{}
+      
+      #sliderproduct p.cr1 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: #800020FF!important;
+      }
+      
+      #sliderproduct .col-sm-6:last-child {
+        /* Cần nâng cao thêm kiến thức về sử dụng padding */
+        padding-top: 146px;
+        padding-bottom: 27px;
+      }
+      #sliderproduct .details p.d-inline-block {
+        color: #e0794f;
+      }
+      
+      #sliderproduct .details .fa {
+        color: #e0794f;
+        padding: 0px 3px;
+      }
+      
+      #sliderproduct .rating {
+        margin: 23px 0px;
+      }
+      
+      #sliderproduct .details .btn {
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 16px 22px;
+        background: #800020FF!important;
+        color: #fff;
+        border-radius: 81px;
+        font-size: 14px;
+        display: inline-block;
+      }
+      
+      #sliderproduct .details h2 {
+        margin: 25px 0px 30px 0px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      
+      #sliderproduct .details p.cr4 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 0px;
+      }
+      #sliderproduct .carousel-item{
+        transition: 0.4s;
+      }
+      
+      
+      #sliderproduct a.carousel-control-prev, #sliderproduct a.carousel-control-next {
+        border-radius: 50%;
+        background-color: #800020FF!important;
+        width: 46px;
+        height: 46px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 40px;
+        opacity: 1;
+        top: 50%;
+        transform: translate(-50%,-60%);
+      }
+      
+      .bg {
+        height: 570px;
+        overflow: hidden;
+      }
+      
+      #sliderproduct ol.carousel-indicators {
+        display: none;
+      }
+      
+</style>
+<div class="headerContainer">
+    <div class="textContainer">
+        <div id="text">
+        <h1><b style="font-size: 55px;">Find The Best Painting Style for You</b></h1>
+        <p style="font-family: 'Frank Ruhl Libre';font-size: 22px;">Every work of art holds a story worth being told. We are the voice — the most relevant destination for accessible and curated art pieces.</p>
+        <div id="buttonDiv" style="
+        height: 50px;
+        background-color: black;
+        width: 200px;"><a href="#collection">SHOP NOW</a></div>
+        </div>
+    </div>
+    <div class="pictureContainer">
+
+    </div>
+</div>
+<div class="secondContainer" id="new">
+    <h1><b>New Collection</b></h1>
+
+    <div class="card-group">
+        <div class="card">
+          <img src="../data/11.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Abstract Woman</h5>
+              </div>
+        </div>
+        <div class="card">
+          <img src="../data/4.jpg" style="height:372px!important;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Abstract Woman</h5>
+             </div>
+        </div>
+        <div class="card">
+          <img src="../data/16.jpg" style="height:372px!important;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Abstract Woman</h5>
+              </div>
+        </div>
+      </div>
+
+    <div class="bestPainting" id="trends">
+        <div class="bestImage"></div>
+        <div class="bestText">
+            <h1>Best Paintings since 2018</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <img src="../data/pic.png" alt="...">
+        </div>
+    </div>
+</div>
+
+<div class="dealOfTheDay" style="height: 100%;">
+    <div class="bg mt-5" style="height: 100%;">
+        <div class="bg-product mt-5">
+          <div class="container product">
+            <div class="row">
+              <div id="sliderproduct" class="carousel slide " data-ride="carousel" data-interval="10000">
+                <ol class="carousel-indicators">
+                  <li data-target="#sliderproduct" data-slide-to="0" class="active"></li>
+                  <li data-target="#sliderproduct" data-slide-to="1"></li>
+                  <li data-target="#sliderproduct" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox" data-interval="10000000">
+                  <div class="carousel-item active">
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-6 image">
+                          <div class="item">
+                            <h1><i>Deal of the day</i></h1>
+                            <img class="img-fluid" src="../data/28.jpg" alt="">
+                          </div><!--enditem-->
+                        </div><!--endcol-->
+                        <div class="col-sm-6">
+                          <div class="top d-flex justify-content-center" id="demo">
+                            
+                          </div><!--endtop-->
+                          <div class="details">
+                            <h2 class="cr3">Two Ballerinas</h2>
+                            <p class="cr4">Abstract painting of Two Ballerinas <br> dancing ….</p>
+                            <div class="rating">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </div><!--endrating-->
+                            <p class="cr1"><s>$200 </s> $99</s></p>
+                            <a href="{% url 'art_details' 20 %}" class="btn text-light  ms-3 mb-3 " style="background-color: #800020FF">Details</a>
+                      </div><!--enddetails-->
+                    </div><!--endcol-->
+                  </div><!--endrow-->
+                </div><!--endcontainer-->
+              </div><!--endcarousel-item-->
+              
+        </div><!--endslidesliderproduct-->
+      </div><!--endrow-->
+      </div><!--endcontainer-->
+      </div><!--endbg-product-->
+      </div>
+    </div>
+
+
+</div>
+
+<div>
+<div class="container w-100 align-top" id="collection">
+
+<div class="row w-100">
+    <div class="col-md-3 d-inline-block mt-3 justify-content-center align-top">
+        <div style="background-color: #000000de" class="text-light rounded shadow m-4 text-center p-3">
+            <h4 class="mb-3">Artists:</h4>
+            {% for a in artists %}
+
+                <h5 class="mb-3 "><a class="text-decoration-none text-light"  href="{% url 'filter_arts' %}?author={{ a.id }}"> {{ a.name }} {{ a.surname }}</a></h5>
+
+            {% endfor %}
+        </div>
+        <div style="background-color: #800020FF;"  class="text-light  align-items-center justify-content-center rounded shadow-lg m-4 text-center p-3">
+            <h4 class="mb-3">Categories:</h4>
+            {% for c in categories %}
+
+                <h5 class="mb-3">  <a class="text-decoration-none text-light"  href="{% url 'filter_arts' %}?category={{ c.id }}">{{ c.name }} </a></h5>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="d-inline-block col-md-9 mt-5">
+    <form action="{% url 'search_arts' %}" method="GET" class="row mb-3" style="width: 100%;margin: auto;">
+        <div class="col-6">
+ <input type="text" name="search_term" class="form-control p-2 search" value="{{ search_term }}" placeholder="Search by title">
+        </div>
+        <div class="col-3">
+            <button type="submit" class="btn p-2 text-light" style="background-color: #000000de">Search</button>
+        </div>
+    </form>
+        {% for b in arts %}
+            <div class="card d-inline-block shadow-lg m-3 p-2" style="width: 17.5rem;">
+            <div style="height: 4rem" class="align-center text-center" >
+                <h5 class="card-title align-self-center text-center fw-bold m-3">{{ b.title }}</h5>
+                </div>
+                <img src="{{ MEDIA_URL }}{{ b.image.url }}" class="card-img-top" width="100%" height="305rem" alt="...">
+                  <div class="card-body">
+                    <h6>Artist: <span>{{ b.artist.name }} {{ b.artist.surname }}</span></h6>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="{% url 'art_details' b.id %}" class="btn text-light  ms-3 mb-3 " style="background-color: #800020FF">Details</a>
+                        </div>
+                <div class="d-inline-block justify-content-end col-6">
+                <h3 class="fw-bold ms-5 d-inline-block w-auto ">${{ b.price }}</h3>
+                </div>
+                       {% if user.is_authenticated and user.role == 'c' %}
+                          <div class="justify-content-center d-flex">
+                          <form method="POST" action="{% url 'add' b.id %}">
+                        {% csrf_token %}
+                       <button class="btn btn-lg text-light" style="background-color: black;" type="submit" value="add_to_cart" name="action">
+                            <i class="bi bi-cart-fill"></i>  Add to cart
+                        </button>
+                            </form>
+                          </div>
+                     {% endif %}
+
+
+</div>
+            </div>
+
+
+        {% endfor %}
+        {% if user.is_authenticated and user.role == 'r' %}
+        <div class="col-3" style="width:100%;">
+            <a href="{% url 'add_art' %}"> <button type="submit" class="btn btn-lg btn-danger p-3 m-1 " style="background-color: #800020FF!important; border: #800020FF!important;width: 100%;">ADD ART</button></a>
+        </div>
+    {% endif %}
+
+    </div>
+</div>
+</div>
+</div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jul 20, 2023 15:37:25").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("demo").innerHTML = "<a>"+days + "<br>days</a><a>" + hours + "<br>hours</a><a>"
+          + minutes + "<br>min</a><a>" + seconds + "<br>sec</a>";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+        </script>
+
+{% endblock %}
